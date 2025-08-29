@@ -8,7 +8,7 @@ I simply added the Prisma schema copy and `prisma generate`
 # Why? 
 I was runnning an old machine and wanted LiteLLM as a proxy for Groq API, and Cerebras to pipe into Open-WebUI. 
 However, the docker image throw Glibc errors avout requiring the x86-64-v2 instruction set. This comes from the chainguard image used as a builder and runtime.
-This has the nice bonus of consuming less space! ~800MB in this image compared ot 2.1GB of the real `ghcr.io/berriai/litellm-database:main-stable` package.
+This has the nice bonus of consuming less space! ~1.5GB in this image compared to ~2.1GB of the real `ghcr.io/berriai/litellm-database:main-stable` package.
 
 # How?
 By using a Python Slim image, and simply `pip install`ing `litellm` and `litellm[proxy]` (and `prisma` and `langfuse`).
